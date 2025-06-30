@@ -1,66 +1,79 @@
 {% extends "base.html" %} {% block title%} dashboard {% endblock %} {% block
 content%}
 <div>
-  <p>Dashboard</p>
+  <h1>Dashboard</h1>
   <div>
     <canvas id="bar-chart" width="800" height="450"></canvas>
+  </div>
+  <div>
+    <canvas id="line-chart" width="800" height="450"></canvas>
   </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-  <canvas id="line-chart" width="800" height="450"></canvas>
+    
   // Bar chart
-new Chart(document.getElementById("bar-chart"), {
-    type: 'bar',
+  new Chart(document.getElementById("bar-chart"), {
+      type: 'bar',
+      data: {
+        labels: {{product_names | safe }},
+        datasets: [
+          {
+            label: "Sales per product(Ksh.)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: {{sale_prod | safe}}
+          },
+          {
+            label: "Profit per product(Ksh.)",
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+            data: {{prof_prod | safe}}
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Predicted world population (millions) in 2050'
+        },
+        scales:{
+          y:{
+            beginAtZero: true
+          },
+          yAxes: [{
+            ticks:{
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+  });
+
+  // line chart
+   new Chart(document.getElementById("line-chart"), {
+    type: 'line',
     data: {
-      labels: {{product_names | safe }},
-      datasets: [
-        {
-          label: "Sales per product(Ksh.)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: {{sale_prod | safe}}
+      labels: {{ date | safe}},
+      datasets: [{
+          data: {{ prof_day | safe}},
+          label: "Profit Per Day",
+          borderColor: "#3e95cd",
+          fill: false
         },
         {
-          label: "Profit per product(Ksh.)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: {{prof_prod | safe}}
+          data: {{ s_day | safe}},
+          label: "Sales Per Day",
+          borderColor: "#3e95cd",
+          fill: false
         }
       ]
     },
     options: {
-      legend: { display: false },
       title: {
         display: true,
-        text: 'Predicted world population (millions) in 2050'
+        text: 'World population per region (in millions)'
       }
     }
-});
-</script>
-<script>
-  new Chart(document.getElementById("line-chart"), {
-  type: 'line',
-  data: {
-    labels: {{ date | safe}},
-    datasets: [{ 
-        data: {{ prof_day | safe}},
-        label: "Profit Per Day",
-        borderColor: "#3e95cd",
-        fill: false
-      },
-      { 
-        data: {{ s_day | safe}},
-        label: "Sales Per Day",
-        borderColor: "#3e95cd",
-        fill: false
-      }
-    ]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'World population per region (in millions)'
-    }
-  }
-});
+  });
 </script>
 {% endblock %}

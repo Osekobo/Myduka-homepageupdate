@@ -39,17 +39,17 @@
     <meta http-equiv="refresh" content="" />
     <title>{% block title%} {% endblock%}</title>
     <style>
-    .nav-link:hover  {
-      background-color: yellow;
-      border-radius: 60px;
-      color: black;
-    }
-  </style>
+      .nav-link:hover {
+        background-color: yellow;
+        border-radius: 60px;
+        color: black;
+      }
+    </style>
   </head>
 
   <body>
-    <div>
-      <nav class="navbar navbar-expand-lg">
+    <div class="mt-5">
+      <nav class="navbar navbar-expand-lg mt-5">
         <div class="container-fluid bg-black">
           <a class="navbar-brand text-warning fw-bold fs-5" href="/">MyDuka</a>
           <button
@@ -109,6 +109,7 @@
       </nav>
 
       <div>
+        <!-- copied from somewhere -->
         {% with messages = get_flashed_messages(with_categories=true) %} {% if
         messages %}
         <div>
@@ -119,7 +120,7 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="alert"
-            ></button>
+            >close</button>
           </div>
 
           {% endfor %}
@@ -251,6 +252,5 @@
     <script>
       new DataTable("#example");
     </script>
-  
   </body>
 </html>

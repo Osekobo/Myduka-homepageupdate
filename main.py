@@ -1,9 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for,flash
-from database import get_products, get_sales, insert_products,insert_stock, get_stock, insert_sales, available_stock, sales_per_product, sales_per_day, profit_per_day,profit_per_product
+from database import get_products, get_sales, insert_products,insert_stock, get_stock, insert_sales, available_stock, sales_per_product, sales_per_day, profit_per_day,profit_per_product,check_user, insert_user
+from flask_bcrypt import Bcrypt
+
+
 
 app = Flask(__name__)
 
 app.secret_key = '123wtrdfdcxcf'
+
+bcrypt = Bcrypt(app)
+
 
 @app.route('/')
 def home():
@@ -39,9 +45,7 @@ def add_products():
     product_name = request.form['product_name']
     buying_price = request.form["buying"]
     selling_price = request.form["selling"]
-    new_product = (product_name, buying_price, selling_price)
-    insert_products(new_product)
-    flash("Product added successfully!", "success")
+   
     return redirect(url_for('products'))
 
 
@@ -62,27 +66,30 @@ def add_sales():
     new_sales = (product_id, sales_quantity)
     stock_available = available_stock(product_id)
     if stock_available < float(sales_quantity):
-        flash("Insufficient stock to comlete sale", "danger")
+        flash("Insufficient stock to complete sale", "danger")
     else:
         insert_sales(new_sales)
         flash("Sale made successfully!", "success")
-    return redirect(url_for('sales'))
+    return redirect(url_for('sales')) # sales is name of view function
 
+
+# Dashboard
 @app.route('/dashboard')
 def dashboard():
+    flash("Dashboard successfully opened", "success")
     sales_product = sales_per_product()
     profit_product = profit_per_product()
     sales_day = sales_per_day()
     profit_day = profit_per_day()
     
-#product related dash data
+#product related dashboard data
     product_names = [i[0] for i in sales_product]
-    sale_prod = [float(i[1]) for i in sales_product]
+    sale_prod = [float(i[1]) for i in sales_product] #float for js to understand
     prof_prod = [float(i[1]) for i in profit_product]
 
 
-#date related dash data
-    date = [str(i[0]) for i in sales_day]
+#date related dashboard data
+    date = [str(i[0]) for i in sales_day] # list comprehension , what of diferent method
     sales_of_day = [float(i[1]) for i in sales_day]
     profit_of_day = [float(i[1]) for i in profit_day]
 
@@ -93,6 +100,39 @@ def dashboard():
 
     return render_template("dashboard.html", product_names = product_names, sale_prod = sale_prod, prof_prod = prof_prod,date =date,sales_of_day = sales_of_day,profit_of_day=profit_of_day,prof_day = prof_day,s_day = s_day)
 
+
+@app.route('/login' methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        user = check_user(email)
+        if user:
+          pass
+    return render_template("login.html")
+
+
+@app.route('/register' ,methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        full_name = request.form['full_name']
+        email = request.form['email']
+        phone_number = request.form['phone_number']
+        password = request.form['password']
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        user = check_user(email)
+        if not user:
+            new_user = (full_name, email, phone_number, hashed_password)
+            insert_user(new_user)
+            flash("User registered successfully", "success")
+            return redirect(url_for('login'))
+        else:
+            flash("User already exists", "danger")
+    return render_template("register.html")
+
+
 app.run(debug=True)
 
 # debugging from browser and relation with productiion , html escaping, variable rules
+# Lambda function
+# List comprehension
