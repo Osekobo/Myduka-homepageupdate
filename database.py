@@ -21,9 +21,8 @@ def get_sales():
     sales = cur.fetchall()
     return sales
 
+
 # getting stock
-
-
 def get_stock():
     cur.execute("select * from stock")
     stock = cur.fetchall()
@@ -32,8 +31,8 @@ def get_stock():
 
 # method 1 inserting products
 def insert_products(values):
-    insert_query = "insert into products(name,buying_price,selling_price)values(%s,%s,%s)"
-    cur.execute(insert_query, values)
+    insert_products = "insert into products(name,buying_price,selling_price) values(%s,%s,%s)"
+    cur.execute(insert_products, values)
     conn.commit()
 
 
@@ -53,7 +52,7 @@ def insert_sales(values):
     conn.commit()
 
 
-# getting sales per products
+# sales per products
 def sales_per_product():
     cur.execute("""
         select products.name as p_name , sum(sales.quantity * products.selling_price) from products

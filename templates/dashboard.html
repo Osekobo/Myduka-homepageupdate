@@ -11,7 +11,7 @@ content%}
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-    
+
   // Bar chart
   new Chart(document.getElementById("bar-chart"), {
       type: 'bar',
@@ -34,17 +34,12 @@ content%}
         legend: { display: false },
         title: {
           display: true,
-          text: 'Predicted world population (millions) in 2050'
+          text: 'Sales and Profit per Product (Ksh.)'
         },
         scales:{
           y:{
             beginAtZero: true
-          },
-          yAxes: [{
-            ticks:{
-              beginAtZero: true
-            }
-          }]
+          }
         }
       }
   });

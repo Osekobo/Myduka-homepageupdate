@@ -43,7 +43,7 @@ content%}
                 </div>
                 <div class="modal-body">
                   <!-- form start -->
-                  <form>
+                  <form action="/add_products" method="post">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label"
                         >Product Name</label
@@ -51,7 +51,7 @@ content%}
                       <input
                         type="text"
                         class="form-control"
-                        id="exampleInputEmail1"
+                        id="productName"
                         aria-describedby="emailHelp"
                         name="product_name"
                       />
@@ -63,18 +63,18 @@ content%}
                       <input
                         type="number"
                         class="form-control"
-                        id="exampleInputPassword1"
+                        id="buyingPrice"
                         name="buying"
                       />
                     </div>
                     <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label"
+                      <label for="exampleInputPassword2" class="form-label"
                         >Selling Price</label
                       >
                       <input
                         type="number"
                         class="form-control"
-                        id="exampleInputPassword1"
+                        id="sellingPrice"
                         name="selling"
                       />
                       <div class="modal-footer">
