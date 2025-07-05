@@ -159,6 +159,14 @@ def logout():
     flash("Logged out successfully", "info")
     return redirect(url_for('login'))
 
+# flask-login
+from flask_login import LoginManager # By default, Flask-Login uses sessions for authentication. This means you must set the secret key on your application.
+login_manager = LoginManager() #The login manager contains the code that lets your application and Flask-Login work together, such as how to load a user from an ID, where to send users when they need to log in
+login_manager.init_app(app) # configure it for login with
+
+@login_manager.user_loader # This callback is used to reload the user object from the user ID stored in the session. A decorator that tells Flask-Login how to load a user from a user ID stored in the session. 
+def load_user(user_id): #should return the corresponding user object. If no user is found, it should return None.
+    return User.get(int(user_id))  # Assuming you have a User model with a get method
 
 app.run(debug=True)
 
