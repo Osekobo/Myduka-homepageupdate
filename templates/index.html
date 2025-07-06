@@ -1,54 +1,319 @@
 {% extends "base.html" %} {% block title%} index {% endblock %} {% block
 content%}
-<div class="bg-black">
-<div class="card mb-3 bg-black container">
-  <div class="row g-0">
-    <div class="col-md-8">
-      <div class="card-body">
-        <ul class="list-unstyled mt-5 text-warning">
-          <li>
-            <i class="fa-solid fa-xmark"></i>&nbsp;<i
-              class="fa-solid fa-xmark"
-            ></i
-            >&nbsp;<i class="fa-solid fa-xmark"></i>
-          </li>
-          <li>
-            <i class="fa-solid fa-xmark"></i>&nbsp;<i
-              class="fa-solid fa-xmark"
-            ></i>
-          </li>
-          <li><i class="fa-solid fa-xmark"></i></li>
-        </ul>
-        <h5 class="card-title text-warning fs-1 fw-bolder">
-          The Future`s Bright,<br />Business is Here
-        </h5>
-        <p class="card-text text-white">
-          Enterpreneurship has great prominence in the modern<br />economic
-          market. A lot of countries are encouraging<br />
-          their citizens to come up with innovative business ideas
-        </p>
-        <button type="button" class="btn btn-warning">Register Now</button>
-        <ul class="list-unstyled mt-5 text-warning">
-          <li><i class="fa-solid fa-xmark"></i></li>
-          <li>
-            <i class="fa-solid fa-xmark"></i>&nbsp;<i
-              class="fa-solid fa-xmark"
-            ></i>
-          </li>
-          <li>
-            <i class="fa-solid fa-xmark"></i>&nbsp;<i
-              class="fa-solid fa-xmark"
-            ></i
-            >&nbsp;<i class="fa-solid fa-xmark"></i>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <img src="static/car1.jpg" class="img-fluid rounded-start" alt="Car 1"> 
+<style>
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 8l6.146 6.354a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
+}
+</style>
+<style>
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 8l6.146 6.354a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
+}
+</style>
+<div class="">
+  <div class="card text-bg-dark">
+    <img src="static/car1.jpg" class="card-img" alt="..." />
+    <div
+      class="card-img-overlay"
+      style="position: absolute; top: 500px; left: 100px"
+    >
+      <h5 class="card-title">SUNSET SALE</h5>
+      <h1>UP TO 25% OFF</h1>
+      <p class="card-text">Selected Building & Construction Materials</p>
+      <button type="button" class="btn btn-outline-light">SHOP NOW</button>
     </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="card mb-3 mt-5 border-0">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="static/car1.jpg" class="img-fluid rounded-start" alt="..." />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body" style="position: relative; left: 200px">
+          <h3 class="card-title fs-1 fw-bolder">Specialisation</h3>
+          <p class="card-text text-secondary" style="max-width: 600px">
+            We are a one-stop shop offering essential tools, materials, and
+            equipment for construction, repairs, and home improvement needs. We
+            provide a wide range of products including tools, building
+            materials, paint, plumbing, and electrical supplies for home
+            improvement, repairs, and construction projects.
+          </p>
+          <button type="button" class="btn btn-secondary">Inquire More</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="container mt-5">
+  <h1 class="py-5">Featured Product Categories</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This card has supporting text below as a natural lead-in to
+            additional content.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+<button type="button" class="btn btn-secondary my-5">More Products</button>
+  </div>
+  
+</div>
+
+
+
+
+<div class="container">
+  <div class="card mb-3 mt-5 border-0">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title fs-1 fw-bolder">Specialisation</h3>
+          <p class="card-text text-secondary" style="max-width: 600px">
+            We are a one-stop shop offering essential tools, materials, and
+            equipment for construction, repairs, and home improvement needs. We
+            provide a wide range of products including tools, building
+            materials, paint, plumbing, and electrical supplies for home
+            improvement, repairs, and construction projects.
+          </p>
+          <button type="button" class="btn btn-secondary">Inquire More</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="static/car1.jpg" class="img-fluid rounded-start" alt="..." />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- product carousel -->
+<div class="container mt-5">
+  <div
+    id="carouselExampleAutoplaying"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- 1 -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This card has supporting text below as a natural lead-in to
+            additional content.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- 1e -->
+      </div>
+      <div class="carousel-item">
+        <!-- 2 -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This card has supporting text below as a natural lead-in to
+            additional content.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- 2e -->
+      </div>
+      <div class="carousel-item">
+        <!-- 3 -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This card has supporting text below as a natural lead-in to
+            additional content.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="static/car1.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This card has even longer content than the
+            first to show that equal height action.
+          </p>
+        </div>
+        <div class="card-footer">
+          <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+        <!-- 3e -->
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 {% endblock %}

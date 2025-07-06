@@ -51,7 +51,7 @@
     <div class="mt-5">
       <nav class="navbar navbar-expand-lg mt-5">
         <div class="container-fluid bg-black">
-          <a class="navbar-brand text-warning fw-bold fs-5" href="/">MyDuka</a>
+          <a class="navbar-brand text-warning fw-bold fs-5" href="/">TROPIC</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -78,7 +78,7 @@
               </li>
 
               {% if session.email %}
-              
+
               <li class="nav-item">
                 <a class="nav-link text-white p-3" href="/products">Products</a>
               </li>
@@ -94,13 +94,17 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/logout"
-                  >Logout</a
-                >
+                <a class="nav-link text-white p-3" href="/logout">Logout</a>
               </li>
 
               {% else %}
-              
+
+              <li class="nav-item">
+                <a class="nav-link text-white p-3" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white p-3" href="/login">Login</a>
+              </li>
               <li class="nav-item">
                 <form class="d-flex" role="search" style="padding: 16px 32px">
                   <input
@@ -113,17 +117,6 @@
                     Search
                   </button>
                 </form>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/register"
-                  >Register</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/login"
-                  >Login</a
-                >
               </li>
               {% endif %}
             </ul>
@@ -139,11 +132,9 @@
           {% for category, message in messages %}
           <div class="alert alert-{{category}} alert-dismissible" role="alert">
             {{ message }}
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-            >close</button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert">
+              close
+            </button>
           </div>
 
           {% endfor %}
@@ -152,57 +143,47 @@
       </div>
       {% block content%} {% endblock%}
 
-      <div class="bg-black text-light py-5">
+      <div class=" py-5">
         <div class="container justify-content-between" style="display: flex">
-          <ul class="list-unstyled">
-            <li class="fs-5 fw-semibold">Popular Features</li>
-            <br />
-            <li>All Products and Features</li>
-            <li>Free Meeting Scheduler App</li>
-            <li>Free Website Builder</li>
-            <li>Free Chatbot Builder</li>
-            <li>Free Landing Page Builder</li>
-            <li>Free Web Hosting</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-5 fw-semibold">Products</li>
+            <li class="list-group-item">New Products</li>
+            <li class="list-group-item">All Products</li>
+            <li class="list-group-item">Spare Parts</li>
+            <li class="list-group-item">Best Sellers</li>
           </ul>
-          <ul class="list-unstyled">
-            <li class="fs-5 fw-semibold">Free Tools</li>
-            <br />
-            <li>See All Free Business Tools</li>
-            <li>Clip Creator</li>
-            <li>Make My Persona</li>
-            <li>Email Signature Generator</li>
-            <li>Guide Creator</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-5 fw-semibold">Professionals</li>
+            <li class="list-group-item">Tools</li>
+            <li class="list-group-item">Our Clients</li>
+            <li class="list-group-item">Projects</li>
           </ul>
-          <div style="width: 2px; height: 440px; background-color: white"></div>
+          <div style="width: 2px; height: 440px; background-color: black"></div>
 
-          <ul class="list-unstyled">
-            <li class="fs-5 fw-semibold">Company</li>
-            <br />
-            <li>About Us</li>
-            <li>careers</li>
-            <li>Management team</li>
-            <li>Blog</li>
-            <li>Contact Us</li>
-            <li>Board of Directors</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-5 fw-semibold">About Tropic</li>
+            <li class="list-group-item">Company</li>
+            <li class="list-group-item">Contact Tropic</li>
+            <li class="list-group-item">Find Tropic</li>
+            <li class="list-group-item">Partners</li>
           </ul>
-          <ul class="list-unstyled">
-            <li class="fs-5 fw-semibold">Customers</li>
-            <br />
-            <li>Customer Support</li>
-            <li>Join a Local User Group</li>
-            <br /><br /><br /><br />
-            <li class="fs-5 fw-semibold">Partners</li>
-            <br />
-            <li>All Partner Programs</li>
-            <li>Solutions Partner Program</li>
-            <li>App Partner Program</li>
-            <li>HubSpot for Startups</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-5 fw-semibold">Legal</li>
+            <li class="list-group-item">Privacy Policy</li>
+            <li class="list-group-item">Distribution Rights</li>
+            <ul class="list-group list-group-flush mt-5">
+              <li class="list-group-item fs-5 fw-semibold">Online Shop</li>
+              <li class="list-group-item">Payment Methods</li>
+              <li class="list-group-item">Shopping Cart</li>
+              <li class="list-group-item">Delivery Conditions</li>
+              <li class="list-group-item">General Terms And Conditions</li>
+            </ul>
           </ul>
         </div>
         <div class="container">
           <!--icons-->
           <div>
-            <hr style="height: 4px; background-color: yellow; border: none" />
+            <hr style="height: 4px; background-color: black; border: none" />
           </div>
           <div class="mt-5">
             <ul
@@ -218,39 +199,25 @@
             </ul>
           </div>
           <div>
-            <h1 class="text-center fw-bold mt-4 text-warning">LOGO</h1>
-            <h6 class="text-center mt-4">Copyright &copy 2025</h6>
+            <h1 class="text-center fw-bold mt-4 text-warning">TROPIC</h1>
+            <h6 class="text-center mt-4">Copyright &copy 2025 Tropic</h6>
             <div class="mt-5">
               <ul
                 class="list-unstyled justify-content-between"
                 style="display: flex"
               >
                 <li>
-                  <a class="link-underline-light text-light">Legal Stuff</a>
+                  <a class="link-underline-light">Privacy Policy</a>
                 </li>
                 <div
-                  style="width: 2px; height: 25px; background-color: white"
+                  style="width: 2px; height: 25px; background-color: black"
+                ></div>
+                <li></li>
+                <div
+                  style="width: 2px; height: 25px; background-color: black"
                 ></div>
                 <li>
-                  <a class="link-underline-light text-light">Privacy Policy</a>
-                </li>
-                <div
-                  style="width: 2px; height: 25px; background-color: white"
-                ></div>
-                <li><a class="link-underline-light text-light">Security</a></li>
-                <div
-                  style="width: 2px; height: 25px; background-color: white"
-                ></div>
-                <li>
-                  <a class="link-underline-light text-light"
-                    >Website Accessibility</a
-                  >
-                </li>
-                <div
-                  style="width: 2px; height: 25px; background-color: white"
-                ></div>
-                <li>
-                  <a class="link-underline-light text-light">Manage Cookies</a>
+                  <a class="link-underline-light">Manage Cookies</a>
                 </li>
               </ul>
             </div>
