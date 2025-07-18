@@ -38,19 +38,21 @@
     />
     <meta http-equiv="refresh" content="" />
     <title>{% block title%} {% endblock%}</title>
+    <link rel="icon" type="image/x-icon" href="static/image.png">
     <style>
-      .nav-link:hover {
-        background-color: yellow;
-        border-radius: 60px;
-        color: black;
+      #pro{
+        color: white;
       }
     </style>
   </head>
 
   <body>
-    <div class="mt-5">
-      <nav class="navbar navbar-expand-lg mt-5">
-        <div class="container-fluid bg-black">
+    <div><p class="text-center">TROPIC&reg;</p></div>
+    <!-- class="mt-5" -->
+    <div class=""> 
+      <nav
+        class="navbar navbar-expand-lg bg-black">
+        <div class="container-fluid">
           <a class="navbar-brand text-warning fw-bold fs-5" href="/">TROPIC</a>
           <button
             class="navbar-toggler"
@@ -67,10 +69,14 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbarNav"
           >
-            <ul class="navbar-nav gap-3">
-              <li class="nav-item">
+            <ul
+              class="navbar-nav gap-3"
+              
+            >
+              <li class="nav-item" id="ulli">
                 <a
-                  class="nav-link active text-white p-3"
+                  class="nav-link active  p-3"
+                  id="pro"
                   aria-current="page"
                   href="/"
                   >Home</a
@@ -79,33 +85,33 @@
 
               {% if session.email %}
 
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/products">Products</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" id="pro" href="/products">Products</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/stock">Stock</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" id="pro" href="/stock">Stock</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/sales">Sales</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" id="pro" href="/sales">Sales</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/dashboard"
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" id="pro" href="/dashboard"
                   >DashBoard</a
                 >
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/logout">Logout</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" id="pro" href="/logout">Logout</a>
               </li>
 
               {% else %}
 
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/register">Register</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" href="/register">Register</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link text-white p-3" href="/login">Login</a>
+              <li class="nav-item" id="ulli">
+                <a class="nav-link  p-3" href="/login">Login</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="ulli">
                 <form class="d-flex" role="search" style="padding: 16px 32px">
                   <input
                     class="form-control me-2"
@@ -132,9 +138,11 @@
           {% for category, message in messages %}
           <div class="alert alert-{{category}} alert-dismissible" role="alert">
             {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert">
-              close
-            </button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+            ></button>
           </div>
 
           {% endfor %}
@@ -143,7 +151,8 @@
       </div>
       {% block content%} {% endblock%}
 
-      <div class=" py-5">
+
+      <div class="py-5  mt-5">
         <div class="container justify-content-between" style="display: flex">
           <ul class="list-group list-group-flush">
             <li class="list-group-item fs-5 fw-semibold">Products</li>
