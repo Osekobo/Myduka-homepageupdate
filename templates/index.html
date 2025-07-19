@@ -10,34 +10,38 @@ content%}
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 8l6.146 6.354a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
   }
 </style>
-<div class="">
+<div class="" id="home">
   <div class="card text-bg-dark">
     <img
       src="static/homep.jpg"
-      class="card-img"
+      class="card-img img-fluid"
       alt="..."
-      style="height: 800px"
+      style="height: 100vh; object-fit: cover"
     />
-    <div
-      class="card-img-overlay"
-      style="position: absolute; top: 500px; left: 100px"
-    >
-      <div
-        style="position: relative; float: right"
-      >
-        <img src="static/delivery.png" class="card-img" alt="..." style="height: 200px; width: 300px;"/>
+    <div class="card-img-overlay" style="top: 500px; left: 100px">
+      <div style="float: right">
+        <img
+          src="static/delivery.png"
+          class="card-img"
+          alt="..."
+          style="height: 200px; width: 300px"
+        />
       </div>
-      <h1 class="card-title fw-bold">SUNSET SALE</h1>
-      <h1>UP TO 25% OFF</h1>
-      <p class="card-text">Selected Building & Construction Materials</p>
-      <button type="button" class="btn btn-outline-light">SHOP NOW</button>
+      <h1 class="card-title fw-bold display-4 text-white">SUNSET SALE</h1>
+      <h2 class="text-white">UP TO 25% OFF</h2>
+      <p class="card-text mb-4">Selected Building & Construction Materials</p>
+      <a
+        href="products#sunset"
+        class="btn btn-outline-light text-black text-decoration-none"
+        >SHOP</a
+      >
     </div>
   </div>
 </div>
 
 <div class="container">
   <div class="card mb-3 mt-5 border-0">
-    <div class="row g-0">
+    <div class="row g-0 align-items-center">
       <div class="col-md-4">
         <img
           src="static/aboutpage.jpg"
@@ -46,16 +50,20 @@ content%}
         />
       </div>
       <div class="col-md-8">
-        <div class="card-body" style="position: relative; left: 200px">
+        <div class="card-body px-3 px-md-5">
           <h3 class="card-title fs-1 fw-bolder">Specialisation</h3>
-          <p class="card-text text-secondary" style="max-width: 600px">
+          <p class="card-text text-secondary">
             We are a one-stop shop offering essential tools, materials, and
             equipment for construction, repairs, and home improvement needs. We
             provide a wide range of products including tools, building
             materials, paint, plumbing, and electrical supplies for home
             improvement, repairs, and construction projects.
           </p>
-          <button type="button" class="btn btn-secondary">Inquire More</button>
+          <button type="button" class="btn btn-secondary">
+            <a href="#category" class="text-decoration-none text-white"
+              >Inquire More</a
+            >
+          </button>
         </div>
       </div>
     </div>
@@ -64,103 +72,69 @@ content%}
 
 <div class="container mt-5">
   <h1 class="py-5">Featured Product Categories</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/equipment.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Construction & Building Materials</h5>
-          <p class="card-text">
-            Products: Cement, sand, nails, steel bars, roofing sheets, bricks,
-            pipes
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/tools.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Tools and Equipment</h5>
-          <p class="card-text">
-            Examples: Drills, saws, hammers, spanners, welding machines
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
+  <div class="">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="static/equipment.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Construction & Building Materials</h5>
+            <p class="card-text">
+              Products: Cement, sand, nails, steel bars, roofing sheets, bricks,
+              pipes
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Go to</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/electrical.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Electrical Supplies</h5>
-          <p class="card-text">
-            Products: Wires, sockets, circuit breakers, bulbs, meters, switches
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-5">
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/plumbing.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Plumbing and Sanitary</h5>
-          <p class="card-text">
-            Items: Pipes, taps, PVC fittings, sinks, water tanks, toilet bowls
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/paint.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Paints and Finishes</h5>
-          <p class="card-text">
-            Products: Paints, thinners, brushes, varnish, waterproofing products
-            Services: Color mixing, paint consultation Popular Brands: Crown,
-            Sadolin, Duracoat
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="static/tools.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Tools and Equipment</h5>
+            <p class="card-text">
+              Examples: Drills, saws, hammers, spanners, welding machines
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Go to</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col">
-      <div class="card h-100">
-        <img src="static/improvements.jpg" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Home Improvement & Fixtures</h5>
-          <p class="card-text">
-            Products: Door locks, hinges, cabinet handles, shelves, wall
-            brackets
-          </p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Last updated 3 mins ago</small>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="text-center">
-    <button type="button" class="btn btn-secondary my-5">All Products</button>
+      <div class="col-12 col-md-4">
+        <div class="card h-100">
+          <img src="static/electrical.jpg" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Electrical Supplies</h5>
+            <p class="card-text">
+              Products: Wires, sockets, circuit breakers, bulbs, meters,
+              switches
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Go to</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
+
+<div class="text-center">
+  <button type="button" class="btn btn-secondary my-5">
+    <a href="products#moreproducts" class="text-decoration-none text-white">More Products</a>
+  </button>
 </div>
 
 <div class="container">
@@ -168,13 +142,13 @@ content%}
     <div class="row g-0">
       <div class="col-md-8">
         <div class="card-body">
-          <h3 class="card-title fs-1 fw-bolder">Customer Segment</h3>
+          <h3 class="card-title fs-1 fw-bolder">Contact Us</h3>
           <p class="card-text text-secondary" style="max-width: 600px">
-            We supply products to a wide range of industries, businesses, and
-            individual customers. Here are the main areas or sectors we supply
-            to:
+            Contact us for building materials, tools, plumbing supplies,
+            electricals, roofing sheets, and expert hardware advice. We're ready
+            to assist!
           </p>
-          <button type="button" class="btn btn-secondary">Inquire More</button>
+          <button type="button" class="btn btn-secondary">More Info</button>
         </div>
       </div>
       <div class="col-md-4">
@@ -189,7 +163,7 @@ content%}
 </div>
 
 <!-- product carousel -->
-<div class="container mt-5">
+<div class="container mt-5" id="category">
   <div
     id="carouselExampleAutoplaying"
     class="carousel slide"
@@ -201,7 +175,12 @@ content%}
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card h-100">
-              <img src="static/real.jpg" class="card-img-top" alt="..." />
+              <img
+                src="static/real.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 300px"
+              />
               <div class="card-body">
                 <h5 class="card-title">Construction & Real Estate</h5>
                 <p class="card-text">
@@ -212,7 +191,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -230,7 +211,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -252,7 +235,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -278,7 +263,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -295,7 +282,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -317,7 +306,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -330,7 +321,12 @@ content%}
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card h-100">
-              <img src="static/office.jpg" class="card-img-top" alt="..." />
+              <img
+                src="static/office.jpg"
+                class="card-img-top"
+                alt="..."
+                style="height: 300px"
+              />
               <div class="card-body">
                 <h5 class="card-title">Offices & Commercial Buildings</h5>
                 <p class="card-text">
@@ -340,7 +336,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -358,7 +356,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>
@@ -375,7 +375,9 @@ content%}
               </div>
               <div class="card-footer">
                 <small class="text-body-secondary"
-                  >Last updated 3 mins ago</small
+                  ><div class="d-grid">
+                    <button class="btn btn-primary" type="button">Go to</button>
+                  </div></small
                 >
               </div>
             </div>

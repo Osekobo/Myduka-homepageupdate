@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-from database import get_products, get_sales, insert_products, insert_stock, get_stock, insert_sales, available_stock, sales_per_product, sales_per_day, profit_per_day, profit_per_product, check_user, insert_user
+from database import get_products, get_sales, insert_products, insert_stock, get_stock, insert_sales, available_stock, sales_per_product, sales_per_day, profit_per_day, profit_per_product, check_user, insert_user, edited_product
 from flask_bcrypt import Bcrypt
 from functools import wraps
 from flask_login import LoginManager, login_user, login_required, logout_user, UserMixin, current_user
@@ -12,14 +12,11 @@ app.secret_key = '123wtrdfdcxcf'
 
 bcrypt = Bcrypt(app)
 
-login_manager = LoginManager()
-login_manager.init_app(app)
-login_manager.login_view = 'login'
-
 
 @app.route('/')
 def home():
     return render_template("index.html")
+
 
 def login_required(f):
     @wraps(f)
@@ -31,7 +28,6 @@ def login_required(f):
 
 
 @app.route('/products')
-@login_required
 def products():
     if 'email' not in session:
         return redirect(url_for('login'))
@@ -128,14 +124,14 @@ def login():
         password = request.form['password']
         user = check_user(email)
         if not user:
-            flash("User not found please register", "danger")
+            flash("Incorrect user or password, Please try again!", "danger")
         else:
             if bcrypt.check_password_hash(user[-1], password):
                 flash("Login successful", "success")
-                session['emeil'] = email
+                session['email'] = email
                 return redirect(url_for('products'))
             else:
-                flash("Incorrect password", "danger")
+                flash("Incorrect password, please try again", "danger")
     return render_template("login.html")
 
 
@@ -162,21 +158,22 @@ def register():
 @app.route('/logout')
 @login_required
 def logout():
-    logout_user()
+    session.pop('email', None)
     flash("Logged out successfully", "info")
     return redirect(url_for('login'))
 
-# flask-login
-from flask_login import LoginManager # By default, Flask-Login uses sessions for authentication. This means you must set the secret key on your application.
-login_manager = LoginManager() #The login manager contains the code that lets your application and Flask-Login work together, such as how to load a user from an ID, where to send users when they need to log in
-login_manager.init_app(app) # configure it for login with
 
-@login_manager.user_loader # This callback is used to reload the user object from the user ID stored in the session. A decorator that tells Flask-Login how to load a user from a user ID stored in the session. 
-def load_user(user_id): #should return the corresponding user object. If no user is found, it should return None.
-    return User.get(int(user_id))  # Assuming you have a User model with a get method
+@app.route('/edited_prod', methods=['GET', 'POST'])
+@login_required
+def edit_pro():
+    id = request.form['id']
+    prod_name1 = request.form['name1']
+    prod_name2 = request.form['name2']
+    prod_name3 = request.form['name3']
+    x = (prod_name1, prod_name2, prod_name3, id)
+    edited_product(x)
+    flash("Product edited")
+    return redirect(url_for('products'))
+
 
 app.run(debug=True)
-
-# debugging from browser and relation with productiion , html escaping, variable rules
-# Lambda function
-# List comprehension

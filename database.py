@@ -119,4 +119,12 @@ def insert_user(user_details):
     conn.commit()    
 
 
+
+#update edited product
+def edited_product(x):
+    cur.execute("update products set name = %s, buying_price = %s, selling_price = %s where id =%s",x)
+    conn.commit()
+
+
+
 sales_product = sales_per_product

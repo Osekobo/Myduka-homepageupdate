@@ -38,20 +38,62 @@
     />
     <meta http-equiv="refresh" content="" />
     <title>{% block title%} {% endblock%}</title>
-    <link rel="icon" type="image/x-icon" href="static/image.png">
+    <link rel="icon" type="image/x-icon" href="static/image.png" />
     <style>
-      #pro{
+      #pro {
         color: white;
+      }
+      .top-nav {
+        margin: 0;
+        padding: 1px;
+        animation: changeBg 13s infinite alternate;
+        transition: background 2s ease-in-out;
+      }
+
+      @keyframes changeBg {
+        0% {
+          background-color: #ff9a9e;
+        } /* Light pink */
+        25% {
+          background-color: #fad0c4;
+        } /* Light coral */
+        50% {
+          background-color: #a1c4fd;
+        } /* Soft blue */
+        75% {
+          background-color: #c2e9fb;
+        } /* Light teal */
+        100% {
+          background-color: #d4fc79;
+        } /* Light green */
+      }
+      .bounce-button {
+        cursor: pointer;
+        animation: bounce 1.2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 999;
       }
     </style>
   </head>
 
   <body>
-    <div><p class="text-center">TROPIC&reg;</p></div>
+    <div class="top-nav"><p class="text-center">TROPIC&reg;</p></div>
     <!-- class="mt-5" -->
-    <div class=""> 
-      <nav
-        class="navbar navbar-expand-lg bg-black">
+    <div class="">
+      <nav class="navbar navbar-expand-lg bg-black sticky">
         <div class="container-fluid">
           <a class="navbar-brand text-warning fw-bold fs-5" href="/">TROPIC</a>
           <button
@@ -69,13 +111,10 @@
             class="collapse navbar-collapse justify-content-center"
             id="navbarNav"
           >
-            <ul
-              class="navbar-nav gap-3"
-              
-            >
+            <ul class="navbar-nav gap-3">
               <li class="nav-item" id="ulli">
                 <a
-                  class="nav-link active  p-3"
+                  class="nav-link active p-3"
                   id="pro"
                   aria-current="page"
                   href="/"
@@ -86,43 +125,41 @@
               {% if session.email %}
 
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" id="pro" href="/products">Products</a>
+                <a class="nav-link p-3" id="pro" href="/products">Products</a>
               </li>
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" id="pro" href="/stock">Stock</a>
+                <a class="nav-link p-3" id="pro" href="/stock">Stock</a>
               </li>
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" id="pro" href="/sales">Sales</a>
+                <a class="nav-link p-3" id="pro" href="/sales">Sales</a>
               </li>
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" id="pro" href="/dashboard"
-                  >DashBoard</a
-                >
+                <a class="nav-link p-3" id="pro" href="/dashboard">DashBoard</a>
               </li>
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" id="pro" href="/logout">Logout</a>
+                <a class="nav-link p-3" id="pro" href="/logout">Logout</a>
               </li>
-
+              <li class="nav-item" id="ulli">
+                <a class="nav-link p-3"
+                  ><button type="button" class="btn btn-primary">
+                    <i class="fa-solid fa-cart-shopping"></i></button
+                ></a>
+              </li>
               {% else %}
 
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" href="/register">Register</a>
+                <a class="nav-link p-3" id="pro" href="/register"
+                  ><button type="button" class="btn btn-primary">
+                    Register
+                  </button></a
+                >
               </li>
               <li class="nav-item" id="ulli">
-                <a class="nav-link  p-3" href="/login">Login</a>
-              </li>
-              <li class="nav-item" id="ulli">
-                <form class="d-flex" role="search" style="padding: 16px 32px">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-success" type="submit">
-                    Search
-                  </button>
-                </form>
+                <a class="nav-link p-3" id="pro" href="/login"
+                  ><button type="button" class="bounce-button btn btn-primary">
+                    Login
+                  </button></a
+                >
               </li>
               {% endif %}
             </ul>
@@ -151,8 +188,7 @@
       </div>
       {% block content%} {% endblock%}
 
-
-      <div class="py-5  mt-5">
+      <div class="py-5 mt-5">
         <div class="container justify-content-between" style="display: flex">
           <ul class="list-group list-group-flush">
             <li class="list-group-item fs-5 fw-semibold">Products</li>
@@ -162,31 +198,27 @@
             <li class="list-group-item">Best Sellers</li>
           </ul>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item fs-5 fw-semibold">Professionals</li>
-            <li class="list-group-item">Tools</li>
-            <li class="list-group-item">Our Clients</li>
-            <li class="list-group-item">Projects</li>
-          </ul>
-          <div style="width: 2px; height: 440px; background-color: black"></div>
-
-          <ul class="list-group list-group-flush">
             <li class="list-group-item fs-5 fw-semibold">About Tropic</li>
             <li class="list-group-item">Company</li>
             <li class="list-group-item">Contact Tropic</li>
             <li class="list-group-item">Find Tropic</li>
             <li class="list-group-item">Partners</li>
-          </ul>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item fs-5 fw-semibold">Legal</li>
-            <li class="list-group-item">Privacy Policy</li>
-            <li class="list-group-item">Distribution Rights</li>
             <ul class="list-group list-group-flush mt-5">
               <li class="list-group-item fs-5 fw-semibold">Online Shop</li>
               <li class="list-group-item">Payment Methods</li>
               <li class="list-group-item">Shopping Cart</li>
               <li class="list-group-item">Delivery Conditions</li>
               <li class="list-group-item">General Terms And Conditions</li>
+              <li class="list-group-item">Distribution Rights</li>
             </ul>
+          </ul>
+
+          <div style="width: 2px; height: 440px; background-color: black"></div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item fs-5 fw-semibold">Professionals</li>
+            <li class="list-group-item">Tools</li>
+            <li class="list-group-item">Our Clients</li>
+            <li class="list-group-item">Projects</li>
           </ul>
         </div>
         <div class="container">
@@ -221,7 +253,13 @@
                 <div
                   style="width: 2px; height: 25px; background-color: black"
                 ></div>
-                <li></li>
+                <li>
+                  <button class="btn btn-primary" type="button">
+                    <a href="#home" class="text-white text-decoration-none px-5"
+                      >UP</a
+                    >
+                  </button>
+                </li>
                 <div
                   style="width: 2px; height: 25px; background-color: black"
                 ></div>
