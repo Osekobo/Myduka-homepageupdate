@@ -1,15 +1,6 @@
 {% extends "base.html" %} {% block title%} index {% endblock %} {% block
 content%}
-<style>
-  .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 8l6.146 6.354a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
-  }
-</style>
-<style>
-  .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 0-.708 0L4.5 8l6.146 6.354a.5.5 0 0 0 .708-.708L5.707 8l5.647-5.646a.5.5 0 0 0 0-.708z'/%3E%3C/svg%3E");
-  }
-</style>
+
 <div class="" id="home">
   <div class="card text-bg-dark">
     <img
@@ -42,9 +33,14 @@ content%}
 <div class="container">
   <div class="card mb-3 mt-5 border-0">
     <div class="row g-0 align-items-center">
-      <div class="col-md-6">
+      <div class="col-md-6 gallery">
         <img
           src="static/aboutpage.jpg"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+        <img
+          src="static/dealers.jpg"
           class="img-fluid rounded-start"
           alt="..."
         />
@@ -75,7 +71,7 @@ content%}
   <div class="">
     <div class="row g-3">
       <div class="col-12 col-md-4">
-        <div class="card h-100">
+        <div class="card h-100 border-0 pop-image">
           <img src="static/equipment.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Construction & Building Materials</h5>
@@ -93,7 +89,7 @@ content%}
       </div>
 
       <div class="col-12 col-md-4">
-        <div class="card h-100">
+        <div class="card h-100 border-0 pop-image">
           <img src="static/tools.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Tools and Equipment</h5>
@@ -110,7 +106,7 @@ content%}
       </div>
 
       <div class="col-12 col-md-4">
-        <div class="card h-100">
+        <div class="card h-100 border-0 pop-image">
           <img src="static/electrical.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <h5 class="card-title">Electrical Supplies</h5>
@@ -138,7 +134,7 @@ content%}
 </div>
 
 <div class="container">
-  <div class="card mb-3 mt-5 border-0">
+  <div class="card mb-3 mt-5 border-0 pop-imag">
     <div class="row g-0">
       <div class="col-md-7">
         <div class="card-body">
@@ -174,7 +170,7 @@ content%}
         <!-- 1 -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img
                 src="static/real.jpg"
                 class="card-img-top"
@@ -199,7 +195,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img src="static/diy.jpeg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Homeowners & DIY Enthusiasts</h5>
@@ -219,7 +215,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img
                 src="static/technician.jpeg"
                 class="card-img-top"
@@ -249,7 +245,7 @@ content%}
         <!-- 2 -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img src="static/industry.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">
@@ -271,7 +267,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img src="static/school.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Hospitals & Schools</h5>
@@ -290,7 +286,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img
                 src="static/supermarket.jpeg"
                 class="card-img-top"
@@ -320,7 +316,7 @@ content%}
         <!-- 3 -->
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img
                 src="static/office.jpg"
                 class="card-img-top"
@@ -344,7 +340,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img src="static/farm.jpeg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Agriculture & Farming</h5>
@@ -364,7 +360,7 @@ content%}
             </div>
           </div>
           <div class="col">
-            <div class="card h-100">
+            <div class="card h-100 pop-image border-0">
               <img src="static/hotel.jpg" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h5 class="card-title">Hotels & Apartments</h5>
