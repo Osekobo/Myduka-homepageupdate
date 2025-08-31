@@ -145,7 +145,7 @@ content%}
                     class="modal-title fs-5"
                     id="exampleModalLabel{{product[0]}}"
                   >
-                    Modal title
+                    Edit Product
                   </h1>
                   <button
                     type="button"
@@ -167,8 +167,15 @@ content%}
                         name="name1"
                         value="{{product[1]}}"
                       />
-                      <input type="" value="{{product[2]}}" name="name2" />
-                      <label for="" class="form-label">Buying Price</label>
+
+                      <label for="" class="form-label">Buying Price</label
+                      ><br />
+                      <input
+                        type=""
+                        value="{{product[2]}}"
+                        name="name2"
+                        disabled
+                      /><br /><br />
                       <input
                         type="number"
                         class="form-control"
@@ -177,8 +184,14 @@ content%}
                         name="name2"
                         value="{{product[2]}}"
                       />
-                      <input type="" value="{{product[3]}}" name="name3" />
-                      <label for="" class="form-label">Selling Price</label>
+                      <label for="" class="form-label">Selling Price</label
+                      ><br />
+                      <input
+                        type=""
+                        value="{{product[3]}}"
+                        name="name3"
+                        disabled
+                      /><br /><br />
                       <input
                         type="number"
                         class="form-control"
@@ -188,18 +201,8 @@ content%}
                         value="{{product[3]}}"
                       />
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                      Submit
-                    </button>
                     <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">
+                      <button type="submit" class="btn btn-primary">
                         Edit
                       </button>
                     </div>
@@ -246,14 +249,113 @@ content%}
           <div class="card-footer">
             <small class="text-body-secondary"
               ><div class="d-grid gap-2">
-                <button class="btn btn-warning" type="button">
-                  Add to Cart
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-warning"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  Add To Cart
                 </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1
+                          class="modal-title fs-5 fw-bold"
+                          id="staticBackdropLabel"
+                        >
+                          Tropic
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- card start-->
+                        <div class="card mb-3 border-0">
+                          <div class="row g-0">
+                            <div class="col-md-4">
+                              <img
+                                src="static/car1.jpg"
+                                class="img-fluid rounded-start"
+                                alt="..."
+                              />
+                              <!-- <p>pics</p> -->
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">
+                                  (R)evolution 3L Utility Fanny Pack $48
+                                </h5>
+                                <br />
+                                <select
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected>Color :</option>
+                                  <option value="1">Blue</option>
+                                  <option value="2">Black</option>
+                                  <option value="3">Red</option></select
+                                ><br />
+                                <p>Quantity :</p>
+                                <div class="input-group mb-3">
+                                  <input
+                                    type="number"
+                                    class="form-control"
+                                    placeholder="1"
+                                    aria-label="Username"
+                                    aria-describedby="basic-addon1"
+                                  />
+                                </div>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-dark" type="button">
+                                    ADD TO CART
+                                  </button>
+                                  <button class="btn btn-success" type="button">
+                                    PROCEED TO MPESA
+                                  </button>
+                                </div>
+                                <p class="text-center mt-3">
+                                  More payment options
+                                </p>
+                                <p>
+                                  The (R)evolution 3L Utility Fanny Pack $48
+                                </p>
+                                <p>
+                                  More info about the product................
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- card end -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div></small
             >
+            <!--  -->
+
+            <!--  -->
           </div>
         </div>
-        <div class="card">
+        <div class="card pop-image">
           <img src="static/car1.jpg" class="card-img-top" alt="..." />
           <div style="position: absolute; top: 5px; left: 5px">
             <span class="badge rounded-pill text-bg-warning">-37%</span>
@@ -277,7 +379,7 @@ content%}
             >
           </div>
         </div>
-        <div class="card">
+        <div class="card pop-image">
           <img src="static/car1.jpg" class="card-img-top" alt="..." />
           <div style="position: absolute; top: 5px; left: 5px">
             <span class="badge rounded-pill text-bg-warning">-37%</span>
@@ -301,7 +403,7 @@ content%}
             >
           </div>
         </div>
-        <div class="card">
+        <div class="card pop-image">
           <img src="static/car1.jpg" class="card-img-top" alt="..." />
           <div style="position: absolute; top: 5px; left: 5px">
             <span class="badge rounded-pill text-bg-warning">-37%</span>
@@ -325,7 +427,7 @@ content%}
             >
           </div>
         </div>
-        <div class="card">
+        <div class="card pop-image">
           <img src="static/car1.jpg" class="card-img-top" alt="..." />
           <div style="position: absolute; top: 5px; left: 5px">
             <span class="badge rounded-pill text-bg-warning">-37%</span>
@@ -715,18 +817,115 @@ content%}
         aria-describedby="emailHelp"
         placeholder="Email"
       />
-    </div><br>
+    </div>
+    <br />
     <div class="input-group">
-      <textarea placeholder="Comment" class="form-control" id="exampleFormControlTextarea1"></textarea><br />
+      <textarea
+        placeholder="Comment"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+      ></textarea
+      ><br />
       <input
         type="checkbox"
         name="botcheck"
         class="hidden"
         style="display: none"
       />
-    </div><br>
-    <button type="submit" class="btn btn-secondary mb-3"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-secondary mb-3">
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
   </form>
+</div>
+
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#staticBackdrop"
+>
+  Add To Cart
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">
+          Tropic
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- card start-->
+        <div class="card mb-3 border-0">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="static/car1.jpg"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+              <p>pics</p>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">
+                  (R)evolution 3L Utility Fanny Pack $48
+                </h5>
+                <br />
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Color :</option>
+                  <option value="1">Blue</option>
+                  <option value="2">Black</option>
+                  <option value="3">Red</option></select
+                ><br />
+                <p>Quantity :</p>
+                <div class="input-group mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="1"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" type="button">
+                    ADD TO CART
+                  </button>
+                  <button class="btn btn-success" type="button">
+                    PROCEED TO MPESA
+                  </button>
+                </div>
+                <p class="text-center mt-3">More payment options</p>
+                <p>The (R)evolution 3L Utility Fanny Pack $48</p>
+                <p>More info about the product................</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock %}

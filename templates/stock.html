@@ -36,6 +36,7 @@ content%}
         </div>
         <div class="modal-body">
           <!-- form start -->
+           
           <form action="/add_stock" method="post">
             <label for="">select product</label><br />
             <select name="pid">
@@ -47,16 +48,17 @@ content%}
             <label for="">Stock Quantity</label><br />
             <input type="number" name="stock_quantity" /><br /><br />
             <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="submit" class="btn btn-primary">Add Stock</button>
-        </div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Add Stock</button>
+            </div>
           </form>
+
           <!-- form end -->
         </div>
       </div>

@@ -35,7 +35,6 @@ def insert_products(values):
     cur.execute(insert_products, values)
     conn.commit()
 
-
 # current_datetime = str(datetime.now())
 
 # inserting stock
@@ -114,10 +113,6 @@ def insert_user(user_details):
     cur.execute("insert into users(full_name,email,phone_number,password)values(%s,%s,%s,%s)",(user_details))
     conn.commit()
 
-def insert_user(user_details):
-    cur.execute("insert into users(full_name,email,phone_number,password)values(%s,%s,%s,%s)",(user_details))
-    conn.commit()    
-
 
 
 #update edited product
@@ -127,4 +122,4 @@ def edited_product(x):
 
 
 
-sales_product = sales_per_product
+sales_product = sales_per_product()

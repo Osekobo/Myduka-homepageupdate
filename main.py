@@ -176,4 +176,16 @@ def edit_pro():
     return redirect(url_for('products'))
 
 
+
+# import random
+
+# @app.route('/ono', methods=['GET', 'POST'])
+# def num():
+#     ntg = random.randint(1, 100)
+#     ntg2 = random.randint(1, 100)
+#     return render_template("on.html", ntg=ntg, ntg2 = ntg2)
+
+
+# x = num()
+
 app.run(debug=True)
